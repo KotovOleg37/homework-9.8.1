@@ -1,0 +1,67 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.loadButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff2525;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border: solid rgb(0, 153, 255);
+    border-radius: 30px;
+}
+
+.loader {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.loader::after {
+    content: 'Загрузка...';
+    display: inline-block;
+    font-size: 16px;
+    color: #999;
+    margin-left: 10px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+    grid-auto-rows: 300px;
+    grid-gap: 10px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Адаптивный дизайн для мобильных устройств */
+
+@media only screen and (max-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
